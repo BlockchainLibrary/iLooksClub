@@ -1,0 +1,20 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended
+  texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
+script:
+- mkdir _build
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/BlockchainLibraryWhitepaper.tex
+- bibtex _build/BlockchainLibraryWhitepaper
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/BlockchainLibraryWhitepaper.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/BlockchainLibraryWhitepaper.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: q828qCKDqJ3fHqXbIBwDjR6iwUadeYxASuZ6dMu5TG+uzAefxtwuUaMFFg5jVfbpTxdOoRicQI6wTj6U0rkDvTKdzVrApdtGPru/Tk51FVyAiZOrQBRDo9Ma7rQ4ZaX4GuBQMD5z4uJHLoAreTgfBM05KvwJai4N+x7KLIC6fA/7OnaoiduLmK8kB/sCz1lLSAc1KbqSL0/CuWjsirD48Qx1pDVZjtuIRgXCjOBr+WgEvxprLhO9jvSMhcHPyZ3CDv/LV3YHeySC4SGPfRUJf41acVEeiCgkAG+ACPCh6gTpGtwsU58q20y+39UhMyEYhNO5L1Q8KQpUDn6VDx/NDqecC4h8D/fW8BRd6lGKYJvuQ0Q1n414hmP1NwzsMhcJ0p3hbfnJHsj0VbUxXFU0Pnc0LAzGH8xRta83smW0TpB+TPZzZrx2Rp6lOOavkK8ezzW0ez/sj2Ltx/vgj35NEeJ5Qt3Lve7PWUq2+nqtRhRPsuGZkg0Qenezi/q2K5OyyjCLuLDheWj0kLSY2p7SElK3xjQGhaB3mnLbFYiwyPv+dpNsYxA8p4hwbxpiRMrJXJM+DGPTz6U3m9BHwoB/8Kt7E9iWZlwrTtby6aupCFoxUM5KYacGJ/nuT9cS8JZXFJ7XBfNoOLhqvo2HZQVmpn71cadx0alCmSnrtWMyVuY=
+  file:
+  - _build/BlockchainLibraryWhitepaper.pdf
+  skip_cleanup: true
+  on:
+    tags: true

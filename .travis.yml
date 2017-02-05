@@ -5,16 +5,16 @@ before_install:
   texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
 - mkdir _build
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/BlockchainLibraryWhitepaper.tex
-- bibtex _build/BlockchainLibraryWhitepaper
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/BlockchainLibraryWhitepaper.tex
-- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/BlockchainLibraryWhitepaper.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/iLooksClub.tex
+- bibtex _build/iLooksClub
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/iLooksClub.tex
+- pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build tex/iLooksClub.tex
 deploy:
   provider: releases
   api_key:
     secure: wu3CgDpZ44jPwPfxtxuaauqWHs60ReNTyYMs5WgJEX+qx0vTOyjag76UxGAxqQ+IXRe9woEf7bRQbMIbCQlW+wvjx4zeYWRHR+KNMxB01ruyUOiS1yneHxceeWS8xRyJLmWJiMOeV07naU0/dyxcEfdnZn8X6wO4lNiIYGjxFQww8CB3bYTYNJEz/5PXT8ZDgyMSIItB6kWs4K123TkcV6qF+wraJ0xpvGpvmZbUvf6Dgpsi1mKGBVp/HkncpsV2He1x9fJBo+yzCsYgRZKmuOhar+D5tCxdxfrx0op+eNf7UAl9zrVuEEKFycPMg8+2CWl32V+NOjg+cqFjVHw8JD1SgXSmXqrcEXuBNoxs2+7vNgRiI39jipMoobFDnnYS/XLX4Hla6NC6mX8plv8Y8OlL1Msvt3xAIFtCDrxtZc9B1YFbE35Y7jT8jR15UbiCqxu13d4AjJ4JTtV6RY64gt3PEOwBHPE1nVwgt/s/q0onOgpG87aEsLAAjkEA6C6hx0iJARwqyb8fvNUKz62exs4mjc4JpkJkLE72m/XYh8ztpCIYJdAtuBLhHZ5T36/qoCvXEie1o/4hW6mVujPo6NbvGSFwGoFUQ9Ar0tfvEiwcb7QhyhDG9zn944ujA4QSEGlve5LPyT2dilnE4GnXqwb5ICaWfRYIv7j/MVBCJRM=
   file:
-  - _build/BlockchainLibraryWhitepaper.pdf
+  - _build/iLooksClub.pdf
   skip_cleanup: true
   on:
     tags: true

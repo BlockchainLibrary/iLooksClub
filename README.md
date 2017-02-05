@@ -1,3 +1,2 @@
-# BlockchainLibraryWhitepaper [![Travis CI](https://travis-ci.org/BlockchainLibrary/BlockchainLibraryWhitepaper.svg?branch=master)](https://travis-ci.org/BlockchainLibrary/BlockchainLibraryWhitepaper)
-Blockchain Library Whitepaper
-
+# iLooksClub [![Travis CI](https://travis-ci.org/BlockchainLibrary/iLooksClub.svg?branch=master)](https://travis-ci.org/BlockchainLibrary/iLooksClub)
+iLooksClub whitepaper
